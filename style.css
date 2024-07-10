@@ -1,3 +1,54 @@
 html {
-background-color: #EEE5D0;
+  background-color: #eee5D0;
+}
+
+.section2 {
+  display: flex;
+}
+
+.item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.oval:nth-child(1) {
+  margin-top: 150px; /* Adjusted margin to move image up */
+}
+
+.oval:nth-child(3) {
+  margin-top: 250px; /* Adjusted margin to move image down */
+}
+
+.oval img {
+  width: 150px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: filter 0.3s ease, transform 1s ease;
+}
+
+.oval.item:hover img {
+  filter: blur(5px);
+  transform: rotate(360deg);
+}
+
+.oval a.top-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 30px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.oval.item:hover a.top-text {
+  opacity: 1;
 }
