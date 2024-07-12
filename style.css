@@ -5,45 +5,52 @@ html {
 .section2 {
   display: flex;
 }
-
 .item {
   flex: 1;
   text-align: center;
   position: relative;
+  top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .oval:nth-child(1) {
-  margin-top: 150px; /* Adjusted margin to move image up */
+  margin-top: 100px; 
+  margin-left: 20px;
+  transform: scale(1.2);/* Adjusted margin to move image up */
+}
+.oval:nth-child(2) {
+  margin-left: 70px; /* Adjusted margin to move image up */
 }
 
 .oval:nth-child(3) {
-  margin-top: 250px; /* Adjusted margin to move image down */
+  margin-top: 150px;
+  margin-left: 20px; /* Adjusted margin to move image down */
 }
 
 .oval img {
-  width: 150px;
-  height: 300px;
-  object-fit: contain;
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
   border-radius: 50%;
-  border: 2px solid white;
   transition: filter 0.3s ease, transform 1s ease;
+  background-image: none;
 }
 
-.oval.item:hover img {
-  filter: blur(5px);
-  transform: rotate(360deg);
-}
 
 .oval a.top-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: rgb(249, 247, 247);
   padding: 5px 10px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 50px;
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 1;
@@ -51,4 +58,46 @@ html {
 
 .oval.item:hover a.top-text {
   opacity: 1;
+}
+
+
+/*store */
+
+#building-container {
+    position: relative;
+    width: 90%;
+    height: 50%;
+    overflow: hidden;
+    background-image: url(./building2.jpg);
+    background-size: fill;
+    background-position: left top;
+}
+
+#building {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+}
+
+#location-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.location-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+
+.location-icon.active {
+    display: block;
 }
